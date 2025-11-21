@@ -1,0 +1,10 @@
+# Ignora archivos de entornos virtuales
+entorno/
+*.pyc
+
+# Ignora archivos de Django/Wagtail generados localmente
+db.sqlite3
+/media/
+
+# Ignora archivos de configuración sensibles
+.env  
