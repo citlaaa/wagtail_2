@@ -8,11 +8,21 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
 
+# Importar las vistas de inicio de cada app
+from app_consejo import views as consejo_views
+from app_estimulos import views as estimulos_views
+from app_dictaminadora import views as dictaminadora_views
+
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
+
+    # Nuevas URLs de las aplicaciones
+    path("consejo/iniciar-sesion/", consejo_views.inicio_consejo, name="inicio_consejo"),
+    path("estimulos/iniciar-sesion/", estimulos_views.inicio_estimulos, name="inicio_estimulos"),
+    path("dictaminadora/iniciar-sesion/", dictaminadora_views.inicio_dictaminadora, name="inicio_dictaminadora"),
 ]
 
 

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - {{ app_name }}{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin-top: 50px;">
+    <h1 style="color: green;">¡Inicio de Sesión Exitoso!</h1>
+    <h2>Hola mundo {{ app_name }}</h2>
+    <p>Has ingresado correctamente a la aplicación **{{ app_name }}**.</p>
+    <p style="margin-top: 30px;">
+        <a href="/" style="color: #308282; text-decoration: none; font-weight: bold;">← Volver al menú principal</a>
+    </p>
+</div>
+{% endblock %}
