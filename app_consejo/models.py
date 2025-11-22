@@ -24,3 +24,38 @@ class ConsejoUser(models.Model):
 
     def __str__(self):
         return f"{self.user.username} — {self.rol} ({'Activo' if self.activo else 'Inactivo'})"
+
+    def puede_consultar(self):
+        return self.activo and self.rol in ['admin', 'editor', 'consulta']
+
+    def puede_crear(self):
+        return self.activo and self.rol in ['admin', 'editor']
+
+    def puede_editar(self):
+        return self.activo and self.rol in ['admin', 'editor']
+
+    def puede_eliminar(self):
+        return self.activo and self.rol == 'admin'
+
+class ConsejoDocumento(models.Model):
+    descripcion = models.CharField(max_length=300, verbose_name="Descripción")
+    archivo_pdf = models.FileField(upload_to="consejo/pdf/", verbose_name="Archivo PDF")
+    visible = models.BooleanField(default=True, verbose_name="Visible")
+    creado = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
+    modificado = models.DateTimeField(auto_now=True, verbose_name="Última modificación")
+    subido_por = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='consejo_documentos',
+        verbose_name="Subido por"
+        )
+
+    class Meta:
+        verbose_name = 'Documento (Consejo)'
+        verbose_name_plural = 'Documentos (Consejo)'
+        ordering = ['-creado']
+
+    def __str__(self):
+            return self.descripcion

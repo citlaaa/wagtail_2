@@ -1,0 +1,81 @@
+{% extends "app_estimulos/base.html" %}
+
+{% block title %}Editar Documento - {{ app_name }}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card card-app">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-pencil-square me-2"></i>Editar Documento
+                </h5>
+            </div>
+            <div class="card-body p-4">
+                <form method="post" enctype="multipart/form-data" 
+                      action="{% url 'estimulos_editar' documento.id %}">
+                    {% csrf_token %}
+                    
+                    <div class="mb-4">
+                        <label for="id_descripcion" class="form-label fw-bold">Descripción</label>
+                        <input type="text" name="descripcion" id="id_descripcion" 
+                               class="form-control form-control-lg" 
+                               value="{{ documento.descripcion }}" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="id_archivo" class="form-label fw-bold">Archivo PDF</label>
+                        
+                        {% if documento.archivo_pdf %}
+                        <div class="alert alert-light border mb-2">
+                            <i class="bi bi-file-earmark-pdf text-danger me-2"></i>
+                            <strong>Archivo actual:</strong>
+                            <a href="{{ documento.archivo_pdf.url }}" target="_blank">
+                                {{ documento.archivo_pdf.name|truncatechars:50 }}
+                            </a>
+                        </div>
+                        {% endif %}
+                        
+                        <input type="file" name="archivo_pdf" id="id_archivo" 
+                               class="form-control" accept=".pdf">
+                        <div class="form-text">
+                            <i class="bi bi-info-circle me-1"></i>
+                            Solo sube un archivo si deseas reemplazar el actual.
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="visible" id="id_visible" 
+                                   class="form-check-input" role="switch"
+                                   {% if documento.visible %}checked{% endif %}>
+                            <label for="id_visible" class="form-check-label">
+                                <strong>Visible para consulta</strong>
+                            </label>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-app btn-lg">
+                            <i class="bi bi-check-circle me-2"></i>Actualizar
+                        </button>
+                        <a href="{% url 'estimulos_gestor' %}" class="btn btn-outline-secondary btn-lg">
+                            <i class="bi bi-x-circle me-2"></i>Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="card-footer bg-light">
+                <small class="text-muted">
+                    <i class="bi bi-clock me-1"></i>
+                    Creado: {{ documento.creado|date:"d/m/Y H:i" }} |
+                    Modificado: {{ documento.modificado|date:"d/m/Y H:i" }}
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
