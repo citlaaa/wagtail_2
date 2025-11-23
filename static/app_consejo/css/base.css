@@ -1,0 +1,86 @@
+/*
+ * Estilos base para la aplicación Consejo
+ * UNAM - Instituto de Investigaciones Biomédicas
+ * Colores: Verde azulado
+ */
+
+:root {
+    --app-primary: #2f6670;
+    --app-secondary: #308282;
+    --app-light: #e8f4f4;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-app {
+    background: linear-gradient(135deg, var(--app-primary) 0%, var(--app-secondary) 100%);
+}
+
+.navbar-app .navbar-brand,
+.navbar-app .nav-link {
+    color: white !important;
+}
+
+.navbar-app .nav-link:hover {
+    color: var(--app-light) !important;
+}
+
+.navbar-app .nav-link.active {
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 5px;
+}
+
+.content-wrapper {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.card-app {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-app .card-header {
+    background: linear-gradient(135deg, var(--app-primary) 0%, var(--app-secondary) 100%);
+    color: white;
+    border-radius: 16px 16px 0 0 !important;
+    padding: 1rem 1.5rem;
+}
+
+.btn-app {
+    background-color: var(--app-secondary);
+    border-color: var(--app-secondary);
+    color: white;
+}
+
+.btn-app:hover {
+    background-color: var(--app-primary);
+    border-color: var(--app-primary);
+    color: white;
+}
+
+.badge-rol {
+    font-size: 0.75rem;
+    padding: 0.4em 0.8em;
+}
+
+.table-app thead {
+    background: var(--app-light);
+}
+
+.footer-app {
+    background-color: #f8f9fa;
+    padding: 15px 0;
+    margin-top: auto;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

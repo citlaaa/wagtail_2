@@ -1,0 +1,101 @@
+/*
+ * Estilos para la página de login - Consejo
+ * UNAM - Instituto de Investigaciones Biomédicas
+ */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2f6670 0%, #308282 50%, #43b1b0 100%);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.login-header {
+    background: linear-gradient(135deg, #2f6670 0%, #308282 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.login-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.login-header p {
+    opacity: 0.9;
+    margin: 0;
+}
+
+.login-body {
+    padding: 30px;
+}
+
+.form-floating {
+    margin-bottom: 20px;
+}
+
+.form-control:focus {
+    border-color: #308282;
+    box-shadow: 0 0 0 0.2rem rgba(48, 130, 130, 0.25);
+}
+
+.btn-login {
+    background: linear-gradient(135deg, #2f6670 0%, #308282 100%);
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(48, 130, 130, 0.4);
+    background: linear-gradient(135deg, #256060 0%, #287070 100%);
+}
+
+.error-message {
+    background: #ffe5e5;
+    border: 1px solid #ffb3b3;
+    color: #b30000;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.back-link a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.app-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
