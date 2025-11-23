@@ -14,15 +14,15 @@ Facilitar la administración de documentos y procesos internos mediante una plat
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/Tony0619-29">
-        <img src="https://github.com/Tony0619-29.png" width="100px;" alt=""/><br />
-        <sub><b>Antonio Medina Montoya</b></sub>
-      </a>
-    </td>
-    <td align="center">
       <a href="https://github.com/citlaaa">
         <img src="https://github.com/citlaaa.png" width="100px;" alt=""/><br />
         <sub><b>Citlally Fernanda Suárez Juárez</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Tony0619-29">
+        <img src="https://github.com/Tony0619-29.png" width="100px;" alt=""/><br />
+        <sub><b>Antonio Medina Montoya</b></sub>
       </a>
     </td>
   </tr>
