@@ -21,21 +21,18 @@
                     <table class="table table-hover align-middle">
                         <thead class="table-app">
                             <tr>
-                                <th scope="col" style="width: 50%;">
-                                    <i class="bi bi-card-text me-2"></i>Descripción
-                                </th>
                                 <th scope="col" class="text-center" style="width: 25%;">
                                     <i class="bi bi-file-pdf me-2"></i>Archivo
                                 </th>
-                                <th scope="col" class="text-center" style="width: 25%;">
-                                    <i class="bi bi-calendar me-2"></i>Fecha de Publicación
+                                <th scope="col" class="text-center" style="width: 50%;">
+                                    <i class="bi bi-card-text me-2"></i>Descripción
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for documento in documentos %}
                             <tr>
-                                <td><strong>{{ documento.descripcion }}</strong></td>
+
                                 <td class="text-center">
                                     {% if documento.archivo_pdf %}
                                     <a href="{{ documento.archivo_pdf.url }}" 
@@ -46,7 +43,7 @@
                                     <span class="text-muted fst-italic">No disponible</span>
                                     {% endif %}
                                 </td>
-                                <td class="text-center text-muted">{{ documento.creado|date:"d/m/Y" }}</td>
+                                <td class="fw-semibold text-center"><strong>{{ documento.descripcion }}</strong></td>
                             </tr>
                             {% endfor %}
                         </tbody>

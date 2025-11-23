@@ -3,9 +3,10 @@
 {% block title %}Inicio - {{ app_name }}{% endblock %}
 
 {% block content %}
+    {% load static %}
 <div class="row justify-content-center">
     <div class="col-lg-10">
-        <!-- Bienvenida -->
+
         <div class="card card-app mb-4">
             <div class="card-header">
                 <h4 class="mb-0">
@@ -13,17 +14,16 @@
                 </h4>
             </div>
             <div class="card-body text-center py-5">
-                <div class="mb-4">
-                    <i class="bi bi-building" style="font-size: 4rem; color: var(--app-secondary);"></i>
+                <div class="mb-3">
+                    <img src="{% static 'app_consejo/img/biomedicasLogo.png' %}"
+                         alt="Logo UNAM Biomédicas"
+                         class="img-fluid"
+                         style="max-width: 500px; height: auto;">
                 </div>
+                <h2 class="mb-2">INSTITUTO DE INVESTIGACIONES BIOMÉDICAS</h2>
                 <h2 class="mb-3">Sistema de Gestión Documental</h2>
-                <p class="text-muted mb-4">
-                    Aplicación: <strong>{{ app_name }}</strong> | 
-                    Rol: <span class="badge bg-secondary">{{ consejo_user.get_rol_display }}</span>
-                </p>
-                
                 <div class="row justify-content-center g-4">
-                    <!-- Tarjeta Consulta -->
+
                     <div class="col-md-5">
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body text-center p-4">
@@ -31,12 +31,11 @@
                                 <h5>Consultar Documentos</h5>
                                 <p class="text-muted small">Ver los documentos disponibles en el sistema</p>
                                 <a href="{% url 'consejo_consultor' %}" class="btn btn-app">
-                                    <i class="bi bi-eye me-2"></i>Ir a Consulta
+                                    <i class="bi bi-eye me-2"></i>Consultar
                                 </a>
                             </div>
                         </div>
                     </div>
-
                     {% if consejo_user.puede_crear %}
                     <div class="col-md-5">
                         <div class="card h-100 border-0 shadow-sm">
@@ -44,7 +43,7 @@
                                 <i class="bi bi-gear display-4 text-warning mb-3"></i>
                                 <h5>Gestionar Documentos</h5>
                                 <p class="text-muted small">Subir, editar y administrar documentos</p>
-                                <a href="{% url 'consejo_gestor' %}" class="btn btn-warning text-white">
+                                <a href="{% url 'consejo_gestor' %}" class="btn btn-warning text-black">
                                     <i class="bi bi-pencil-square me-2"></i>Ir al Gestor
                                 </a>
                             </div>
