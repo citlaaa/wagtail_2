@@ -1,86 +1,141 @@
 /*
- * Estilos base para la aplicación Dictaminadora
- * UNAM - Instituto de Investigaciones Biomédicas
- * Colores: Naranja
+ * Estilos base institucional UNAM – Aplicación Dictaminadora
+ * Instituto de Investigaciones Biomédicas (IIBO-UNAM)
  */
 
 :root {
-    --app-primary: #c45c26;
-    --app-secondary: #e07b3c;
-    --app-light: #fdf3ed;
+    /* Colores institucionales */
+    --unam-primary: #0b4f8a;      /* Azul UNAM */
+    --unam-secondary: #1261ac;    /* Azul más claro */
+    --unam-light: #d7e3ef;        /* Gris/azul claro */
+    --unam-bg-light: #f4f7fb;     /* Fondo muy claro */
+    --unam-white: #ffffff;
 }
 
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: var(--unam-bg-light);
+    font-family: 'Segoe UI', sans-serif;
 }
 
+/* ===============================
+   NAVBAR
+   =============================== */
 .navbar-app {
-    background: linear-gradient(135deg, var(--app-primary) 0%, var(--app-secondary) 100%);
+    background: linear-gradient(135deg, var(--unam-primary) 0%, var(--unam-secondary) 100%);
+    padding: 12px 0;
 }
 
 .navbar-app .navbar-brand,
 .navbar-app .nav-link {
-    color: white !important;
+    color: var(--unam-white) !important;
+    font-weight: 600;
 }
 
 .navbar-app .nav-link:hover {
-    color: var(--app-light) !important;
+    color: var(--unam-light) !important;
 }
 
 .navbar-app .nav-link.active {
     background-color: rgba(255,255,255,0.15);
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
+/* ===============================
+   CONTENIDO
+   =============================== */
 .content-wrapper {
     flex: 1;
-    padding: 20px 0;
+    padding: 25px 0;
 }
 
+/* ===============================
+   TARJETAS
+   =============================== */
 .card-app {
     border: none;
     border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: var(--unam-white);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .card-app .card-header {
-    background: linear-gradient(135deg, var(--app-primary) 0%, var(--app-secondary) 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--unam-primary) 0%, var(--unam-secondary) 100%);
+    color: var(--unam-white);
     border-radius: 16px 16px 0 0 !important;
     padding: 1rem 1.5rem;
+    font-weight: 600;
 }
 
+/* ===============================
+   BOTONES
+   =============================== */
 .btn-app {
-    background-color: var(--app-secondary);
-    border-color: var(--app-secondary);
-    color: white;
+    background-color: var(--unam-secondary);
+    border-color: var(--unam-secondary);
+    color: var(--unam-white);
+    font-weight: 500;
 }
 
 .btn-app:hover {
-    background-color: var(--app-primary);
-    border-color: var(--app-primary);
-    color: white;
+    background-color: var(--unam-primary);
+    border-color: var(--unam-primary);
+    color: var(--unam-white);
 }
 
+/* ===============================
+   BADGES / INSIGNIAS
+   =============================== */
 .badge-rol {
     font-size: 0.75rem;
+    background: var(--unam-primary);
+    color: var(--unam-white);
     padding: 0.4em 0.8em;
+    border-radius: 6px;
 }
 
+/* ===============================
+   TABLAS
+   =============================== */
 .table-app thead {
-    background: var(--app-light);
+    background: var(--unam-light);
+    color: #002c54;
+    font-weight: 600;
 }
 
-.footer-app {
-    background-color: #f8f9fa;
-    padding: 15px 0;
-    margin-top: auto;
-}
-
+/* ===============================
+   USUARIO (Navbar)
+   =============================== */
 .user-info {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    color: var(--unam-white);
+}
+
+/* ===============================
+   FOOTER INSTITUCIONAL UNAM
+   =============================== */
+.footer-app {
+    background-color: var(--unam-primary);
+    color: var(--unam-light);
+    padding: 25px 0;
+    margin-top: 40px;
+}
+
+.footer-app small {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--unam-light);
+}
+
+.footer-app a {
+    color: var(--unam-white);
+    text-decoration: underline;
+}
+
+.footer-app a:hover {
+    color: #d1e4ff;
 }

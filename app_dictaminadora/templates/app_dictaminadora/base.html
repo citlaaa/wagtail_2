@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg navbar-app">
         <div class="container">
             <a class="navbar-brand fw-bold" href="{% url 'dictaminadora_home' %}">
-                <i class="bi bi-people me-2"></i>{{ app_name|default:"Dictaminadora" }}
+                {{ app_name|default:"Dictaminadora" }}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -88,7 +88,10 @@
     <!-- Footer -->
     <footer class="footer-app">
         <div class="container text-center text-muted">
-            <small>UNAM - Instituto de Investigaciones Biomédicas &copy; 2025</small>
+            <small>© Hecho en México, Universidad Nacional Autónoma de México (UNAM), todos los derechos reservados 2016.
+                Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica.
+                De otra forma, requiere permiso previo por escrito de la institución.
+                Sitio web administrado por la Sección de Cómputo del IIBO-UNAM.</small>
         </div>
     </footer>
 
