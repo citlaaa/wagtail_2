@@ -2,7 +2,22 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.core.exceptions import ValidationError
+import os
 from .models import EstimulosUser, EstimulosDocumento
+
+
+def validar_archivo_pdf(archivo):
+    """Valida que el archivo sea realmente un PDF"""
+
+    ext = os.path.splitext(archivo.name)[1].lower()
+    if ext != '.pdf':
+        raise ValidationError('Solo se permiten archivos PDF')
+
+    # Validar tipo MIME Esto evita tener ataques
+    if archivo.content_type != 'application/pdf':
+        raise ValidationError('El archivo debe ser un PDF válido')
+    return True
 
 
 def get_estimulos_user(user):
@@ -87,7 +102,7 @@ def estimulos_consultor(request):
 
 @login_required(login_url='inicio_estimulos')
 def estimulos_gestor(request):
-    """Vista de gestión de documentos"""
+    #"""Vista de gestión de documentos"""
     estimulos_user = get_estimulos_user(request.user)
     if not estimulos_user or not estimulos_user.puede_crear():
         messages.error(request, "No tienes permiso para acceder al gestor de documentos.")
@@ -119,6 +134,13 @@ def estimulos_guardar(request):
 
             if not descripcion or not archivo_pdf:
                 messages.error(request, "Debes proporcionar una descripción y un archivo PDF.")
+                return redirect('estimulos_gestor')
+
+            # VALIDAR QUE SEA PDF
+            try:
+                validar_archivo_pdf(archivo_pdf)
+            except ValidationError as e:
+                messages.error(request, str(e))
                 return redirect('estimulos_gestor')
 
             documento = EstimulosDocumento(
@@ -168,6 +190,13 @@ def estimulos_editar(request, id):
             documento.visible = 'visible' in request.POST
 
             if 'archivo_pdf' in request.FILES:
+                # VALIDAR QUE SEA PDF
+                try:
+                    validar_archivo_pdf(request.FILES["archivo_pdf"])
+                except ValidationError as e:
+                    messages.error(request, str(e))
+                    return redirect('estimulos_detalle', id=id)
+
                 documento.archivo_pdf.delete(save=False)
                 documento.archivo_pdf = request.FILES["archivo_pdf"]
 
