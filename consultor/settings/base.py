@@ -26,7 +26,7 @@ BASE_DIR = PROJECT_DIR.parent
 INSTALLED_APPS = [
     'app_consejo',
     'app_estimulos',
-    'app_dictaminadora',
+    'app_dictaminadora', 
     "home",
     "search",
     "wagtail.contrib.forms",
