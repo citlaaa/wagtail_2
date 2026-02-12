@@ -38,7 +38,7 @@ Facilitar la administración de documentos y procesos internos mediante una plat
 - **HTML / CSS / Bootstrap**
 - **MariaDB**
 - Entorno virtual con `venv`
-- Sistema operativo recomendado: macOS / Linux / Windows
+- Sistema operativo recomendado: Linux / Windows
 
 ---
 
