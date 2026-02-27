@@ -11,7 +11,9 @@ class ConsejoUser(models.Model):
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name='consejo_users'
+        related_name='consejo_users',
+        limit_choices_to={'is_active': True}
+        
     )
     rol = models.CharField(max_length=30, choices=ROLE_CHOICES)
     activo = models.BooleanField(default=True)

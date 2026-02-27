@@ -2,7 +2,7 @@
  * Estilos para la página de login - Consejo
  * UNAM - Instituto de Investigaciones Biomédicas
  */
-
+/*
 body {
     min-height: 100vh;
     display: flex;
@@ -98,5 +98,135 @@ body {
 .app-icon {
     font-size: 3rem;
     margin-bottom: 10px;
+}*/
+
+
+
+
+/*
+ * Estilos para la página de login (Estilo Institucional Sobrio - Azul/Gris)
+ * UNAM - Instituto de Investigaciones Biomédicas
+ */
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EBEBEB; /* Gris claro neutro para el fondo */
+    color: #333333;
 }
 
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 15px;
+}
+
+.logo-institucional {
+    height: 60px;
+    width: auto;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1)); /* Sombra sutil para despegar el logo del fondo gris */
+}
+
+.login-card {
+    background: #FFFFFF;
+    border: 1px solid #D4D4D4; /* Borde gris estándar */
+    border-radius: 4px; 
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* Sombra elegante gris oscuro */
+    overflow: hidden;
+}
+
+.login-header {
+    background-color: #002B5C; /* Azul UNAM - Color predominante */
+    color: #FFFFFF;
+    padding: 25px 30px;
+    text-align: center;
+    border-bottom: 3px solid #001A38; /* Línea inferior en azul más oscuro en lugar de dorado */
+}
+
+.login-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.login-header p {
+    color: #D0D8E0; /* Gris azulado claro para texto secundario */
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.login-body {
+    padding: 35px 30px;
+}
+
+/* Campos de texto flotantes de Bootstrap */
+.form-floating .form-control {
+    border-radius: 4px;
+    border: 1px solid #B0B0B0; /* Gris medio para bordes inactivos */
+    color: #333333;
+}
+
+.form-floating .form-control:focus {
+    border-color: #002B5C; /* Borde se vuelve azul UNAM al escribir */
+    box-shadow: 0 0 0 0.2rem rgba(0, 43, 92, 0.1); /* Resplandor azul tenue */
+}
+
+.form-floating label {
+    color: #666666; /* Texto gris para los labels */
+}
+
+/* Botón Institucional Monocromático */
+.btn-login {
+    background-color: #002B5C;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.btn-login:hover, .btn-login:focus {
+    background-color: #004080; /* Azul UNAM ligeramente más claro al pasar el mouse */
+    color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
+}
+
+/* Mensaje de error formal (Rojo opaco, menos llamativo) */
+.error-message {
+    background-color: #FAEDED;
+    border-left: 4px solid #B3261E; /* Rojo oscuro formal */
+    color: #B3261E;
+    padding: 12px 15px;
+    border-radius: 2px;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+/* Enlace de regreso */
+.back-link {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.back-link a {
+    color: #444444; /* Gris muy oscuro casi negro */
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.back-link a:hover {
+    color: #002B5C; /* Se vuelve Azul UNAM al pasar el mouse */
+    text-decoration: underline;
+}

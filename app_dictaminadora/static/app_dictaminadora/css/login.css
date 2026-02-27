@@ -1,101 +1,127 @@
 /*
- * Estilos para la página de login - Dictaminadora
+ * Estilos para la página de login - Dictaminadora (Estilo Institucional Sobrio - Azul/Gris)
  * UNAM - Instituto de Investigaciones Biomédicas
  */
 
 body {
+    font-family: 'Roboto', Arial, sans-serif;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #c45c26 0%, #e07b3c 50%, #f5a66a 100%);
+    background-color: #EBEBEB; /* Gris claro neutro para el fondo */
+    color: #333333;
 }
 
 .login-container {
     width: 100%;
-    max-width: 420px;
+    max-width: 450px;
     padding: 15px;
 }
 
+.logo-institucional {
+    height: 60px;
+    width: auto;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
+}
+
 .login-card {
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    background: #FFFFFF;
+    border: 1px solid #D4D4D4;
+    border-radius: 4px; 
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     overflow: hidden;
 }
 
 .login-header {
-    background: linear-gradient(135deg, #c45c26 0%, #e07b3c 100%);
-    color: white;
-    padding: 30px;
+    background-color: #002B5C; /* Azul UNAM */
+    color: #FFFFFF;
+    padding: 25px 30px;
     text-align: center;
+    border-bottom: 3px solid #001A38;
 }
 
 .login-header h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: 5px;
+    letter-spacing: 0.5px;
 }
 
 .login-header p {
-    opacity: 0.9;
+    color: #D0D8E0;
+    font-size: 0.9rem;
     margin: 0;
 }
 
 .login-body {
-    padding: 30px;
+    padding: 35px 30px;
 }
 
-.form-floating {
-    margin-bottom: 20px;
+/* Campos de texto flotantes de Bootstrap */
+.form-floating .form-control {
+    border-radius: 4px;
+    border: 1px solid #B0B0B0;
+    color: #333333;
 }
 
-.form-control:focus {
-    border-color: #e07b3c;
-    box-shadow: 0 0 0 0.2rem rgba(224, 123, 60, 0.25);
+.form-floating .form-control:focus {
+    border-color: #002B5C;
+    box-shadow: 0 0 0 0.2rem rgba(0, 43, 92, 0.1);
 }
 
+.form-floating label {
+    color: #666666;
+}
+
+/* Botón Institucional Monocromático */
 .btn-login {
-    background: linear-gradient(135deg, #c45c26 0%, #e07b3c 100%);
+    background-color: #002B5C;
+    color: #FFFFFF;
     border: none;
-    padding: 12px;
-    font-size: 1.1rem;
-    border-radius: 10px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 14px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
 }
 
-.btn-login:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(224, 123, 60, 0.4);
-    background: linear-gradient(135deg, #a84d1f 0%, #c96a30 100%);
+.btn-login:hover, .btn-login:focus {
+    background-color: #004080;
+    color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
 }
 
+/* Mensaje de error formal */
 .error-message {
-    background: #ffe5e5;
-    border: 1px solid #ffb3b3;
-    color: #b30000;
-    padding: 12px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    text-align: center;
+    background-color: #FAEDED;
+    border-left: 4px solid #B3261E;
+    color: #B3261E;
+    padding: 12px 15px;
+    border-radius: 2px;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
 }
 
+/* Enlace de regreso */
 .back-link {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .back-link a {
-    color: white;
+    color: #444444;
     text-decoration: none;
-    opacity: 0.9;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
 .back-link a:hover {
-    opacity: 1;
+    color: #002B5C;
     text-decoration: underline;
-}
-
-.app-icon {
-    font-size: 3rem;
-    margin-bottom: 10px;
 }
